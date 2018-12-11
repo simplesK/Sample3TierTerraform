@@ -1,0 +1,342 @@
+
+c:\terraform_test>terraform destroy
+"##### Ensure that SSH keys are configured to download aws terraform modules from github #####"
+"##### ~/.ssh/config should contain configuration for no strict hostname check for github #####"
+"##### ~/.ssh/id_rsa and id_rsa.pub should exist #####"
+'#Access' is not recognized as an internal or external command,
+operable program or batch file.
+'#Secret' is not recognized as an internal or external command,
+operable program or batch file.
+aws_db_parameter_group.this: Refreshing state... (ID: terraformaws-20181210134343998900000001)
+aws_key_pair.web-key: Refreshing state... (ID: web-key)
+aws_db_option_group.this: Refreshing state... (ID: terraformaws-20181210134343998900000002)
+aws_vpc.this: Refreshing state... (ID: vpc-0a35ef91a9e797716)
+aws_eip.nat[0]: Refreshing state... (ID: eipalloc-01d375ccebfb49715)
+data.aws_ami.amazon_linux: Refreshing state...
+aws_eip.nat[1]: Refreshing state... (ID: eipalloc-047c62dc2e9ead145)
+aws_security_group.elb_app: Refreshing state... (ID: sg-0da82cb21bc863bc3)
+aws_security_group.web: Refreshing state... (ID: sg-0ee91330c22d6ff96)
+aws_security_group.elb_web: Refreshing state... (ID: sg-03459894005861edd)
+aws_subnet.private[0]: Refreshing state... (ID: subnet-08c1629f5e1f3b2d4)
+aws_subnet.private[1]: Refreshing state... (ID: subnet-0647885a778ae757c)
+aws_internet_gateway.this: Refreshing state... (ID: igw-0b33f45893fc89bac)
+aws_subnet.database[1]: Refreshing state... (ID: subnet-0b0cd36fe07134c3c)
+aws_subnet.database[0]: Refreshing state... (ID: subnet-0bc4320f82a6ff711)
+aws_subnet.public[0]: Refreshing state... (ID: subnet-078f00aa40f8168f0)
+aws_subnet.public[1]: Refreshing state... (ID: subnet-0a03e8c675086c5d3)
+aws_route_table.private[0]: Refreshing state... (ID: rtb-03b2270129d6be1e7)
+aws_route_table.private[1]: Refreshing state... (ID: rtb-02f19e50633a65daf)
+aws_route_table.public: Refreshing state... (ID: rtb-09e3a5b99bfc33414)
+aws_nat_gateway.this[0]: Refreshing state... (ID: nat-08ab3408d30be578f)
+aws_nat_gateway.this[1]: Refreshing state... (ID: nat-082c2b876dff9f8b4)
+aws_elb.this: Refreshing state... (ID: sv-tf-aws-elb-web)
+aws_db_subnet_group.database: Refreshing state... (ID: sv-tf-aws-vpc)
+aws_security_group.rds: Refreshing state... (ID: sg-055bab98d4cb3648c)
+aws_security_group.app: Refreshing state... (ID: sg-08997864722d5f652)
+aws_db_subnet_group.this: Refreshing state... (ID: terraformaws-20181210134405720300000003)
+aws_elb.this: Refreshing state... (ID: sv-tf-aws-elb-app)
+aws_route_table_association.private[1]: Refreshing state... (ID: rtbassoc-0e864469cd7b19b7f)
+aws_route_table_association.private[0]: Refreshing state... (ID: rtbassoc-082f5b2ff2161d468)
+aws_route_table_association.database[0]: Refreshing state... (ID: rtbassoc-095784d4588cc3f1b)
+aws_route_table_association.database[1]: Refreshing state... (ID: rtbassoc-08c02fd7674d1c16e)
+aws_route.public_internet_gateway: Refreshing state... (ID: r-rtb-09e3a5b99bfc334141080289494)
+aws_route_table_association.public[0]: Refreshing state... (ID: rtbassoc-0a11957488a994d85)
+aws_route_table_association.public[1]: Refreshing state... (ID: rtbassoc-08416ae061f9f3cd6)
+aws_route.private_nat_gateway[0]: Refreshing state... (ID: r-rtb-03b2270129d6be1e71080289494)
+aws_route.private_nat_gateway[1]: Refreshing state... (ID: r-rtb-02f19e50633a65daf1080289494)
+aws_db_instance.this: Refreshing state... (ID: terraformaws)
+aws_launch_configuration.app: Refreshing state... (ID: sv-tf-aws-app-vm-20181210143933255200000001)
+aws_launch_configuration.web: Refreshing state... (ID: sv-tf-aws-web-vm-20181210141908538000000002)
+aws_autoscaling_group.app: Refreshing state... (ID: tf-asg-20181210135035620700000007)
+aws_autoscaling_group.web: Refreshing state... (ID: tf-asg-20181210134427450600000005)
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  - aws_autoscaling_group.app
+
+  - aws_autoscaling_group.web
+
+  - aws_key_pair.web-key
+
+  - aws_launch_configuration.app
+
+  - aws_launch_configuration.web
+
+  - aws_security_group.app
+
+  - aws_security_group.elb_app
+
+  - aws_security_group.elb_web
+
+  - aws_security_group.rds
+
+  - aws_security_group.web
+
+  - module.vpc.aws_db_subnet_group.database
+
+  - module.vpc.aws_eip.nat[0]
+
+  - module.vpc.aws_eip.nat[1]
+
+  - module.vpc.aws_internet_gateway.this
+
+  - module.vpc.aws_nat_gateway.this[0]
+
+  - module.vpc.aws_nat_gateway.this[1]
+
+  - module.vpc.aws_route.private_nat_gateway[0]
+
+  - module.vpc.aws_route.private_nat_gateway[1]
+
+  - module.vpc.aws_route.public_internet_gateway
+
+  - module.vpc.aws_route_table.private[0]
+
+  - module.vpc.aws_route_table.private[1]
+
+  - module.vpc.aws_route_table.public
+
+  - module.vpc.aws_route_table_association.database[0]
+
+  - module.vpc.aws_route_table_association.database[1]
+
+  - module.vpc.aws_route_table_association.private[0]
+
+  - module.vpc.aws_route_table_association.private[1]
+
+  - module.vpc.aws_route_table_association.public[0]
+
+  - module.vpc.aws_route_table_association.public[1]
+
+  - module.vpc.aws_subnet.database[0]
+
+  - module.vpc.aws_subnet.database[1]
+
+  - module.vpc.aws_subnet.private[0]
+
+  - module.vpc.aws_subnet.private[1]
+
+  - module.vpc.aws_subnet.public[0]
+
+  - module.vpc.aws_subnet.public[1]
+
+  - module.vpc.aws_vpc.this
+
+  - module.elb_app.module.elb.aws_elb.this
+
+  - module.elb_web.module.elb.aws_elb.this
+
+  - module.rds.module.db_instance.aws_db_instance.this
+
+  - module.rds.module.db_option_group.aws_db_option_group.this
+
+  - module.rds.module.db_parameter_group.aws_db_parameter_group.this
+
+  - module.rds.module.db_subnet_group.aws_db_subnet_group.this
+
+
+Plan: 0 to add, 0 to change, 41 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+module.vpc.aws_db_subnet_group.database: Destroying... (ID: sv-tf-aws-vpc)
+aws_key_pair.web-key: Destroying... (ID: web-key)
+aws_autoscaling_group.app: Destroying... (ID: tf-asg-20181210135035620700000007)
+aws_autoscaling_group.web: Destroying... (ID: tf-asg-20181210134427450600000005)
+module.vpc.aws_route_table_association.public[1]: Destroying... (ID: rtbassoc-08416ae061f9f3cd6)
+module.vpc.aws_route.private_nat_gateway[0]: Destroying... (ID: r-rtb-03b2270129d6be1e71080289494)
+module.vpc.aws_route_table_association.private[1]: Destroying... (ID: rtbassoc-0e864469cd7b19b7f)
+module.vpc.aws_route.public_internet_gateway: Destroying... (ID: r-rtb-09e3a5b99bfc334141080289494)
+module.vpc.aws_route_table_association.database[0]: Destroying... (ID: rtbassoc-095784d4588cc3f1b)
+module.vpc.aws_route_table_association.public[0]: Destroying... (ID: rtbassoc-0a11957488a994d85)
+module.vpc.aws_db_subnet_group.database: Destruction complete after 1s
+module.vpc.aws_route_table_association.public[0]: Destruction complete after 1s
+module.vpc.aws_route_table_association.database[1]: Destroying... (ID: rtbassoc-08c02fd7674d1c16e)
+aws_key_pair.web-key: Destruction complete after 1s
+module.vpc.aws_route_table_association.private[1]: Destruction complete after 1s
+module.vpc.aws_route.private_nat_gateway[1]: Destroying... (ID: r-rtb-02f19e50633a65daf1080289494)
+module.vpc.aws_route_table_association.private[0]: Destroying... (ID: rtbassoc-082f5b2ff2161d468)
+module.vpc.aws_route_table_association.public[1]: Destruction complete after 1s
+module.vpc.aws_route_table_association.database[0]: Destruction complete after 1s
+module.vpc.aws_route.public_internet_gateway: Destruction complete after 1s
+module.vpc.aws_route.private_nat_gateway[0]: Destruction complete after 1s
+module.vpc.aws_route_table.public: Destroying... (ID: rtb-09e3a5b99bfc33414)
+module.vpc.aws_route_table_association.database[1]: Destruction complete after 1s
+module.vpc.aws_route.private_nat_gateway[1]: Destruction complete after 1s
+module.vpc.aws_nat_gateway.this[0]: Destroying... (ID: nat-08ab3408d30be578f)
+module.vpc.aws_nat_gateway.this[1]: Destroying... (ID: nat-082c2b876dff9f8b4)
+module.vpc.aws_route_table_association.private[0]: Destruction complete after 1s
+module.vpc.aws_route_table.private[0]: Destroying... (ID: rtb-03b2270129d6be1e7)
+module.vpc.aws_route_table.private[1]: Destroying... (ID: rtb-02f19e50633a65daf)
+module.vpc.aws_route_table.public: Destruction complete after 3s
+module.vpc.aws_route_table.private[0]: Destruction complete after 3s
+module.vpc.aws_route_table.private[1]: Destruction complete after 3s
+aws_autoscaling_group.web: Still destroying... (ID: tf-asg-20181210134427450600000005, 10s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 10s elapsed)
+module.vpc.aws_nat_gateway.this.1: Still destroying... (ID: nat-082c2b876dff9f8b4, 10s elapsed)
+module.vpc.aws_nat_gateway.this.0: Still destroying... (ID: nat-08ab3408d30be578f, 10s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 20s elapsed)
+aws_autoscaling_group.web: Still destroying... (ID: tf-asg-20181210134427450600000005, 20s elapsed)
+module.vpc.aws_nat_gateway.this.1: Still destroying... (ID: nat-082c2b876dff9f8b4, 20s elapsed)
+module.vpc.aws_nat_gateway.this.0: Still destroying... (ID: nat-08ab3408d30be578f, 20s elapsed)
+aws_autoscaling_group.web: Still destroying... (ID: tf-asg-20181210134427450600000005, 30s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 30s elapsed)
+module.vpc.aws_nat_gateway.this.1: Still destroying... (ID: nat-082c2b876dff9f8b4, 30s elapsed)
+module.vpc.aws_nat_gateway.this.0: Still destroying... (ID: nat-08ab3408d30be578f, 30s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 40s elapsed)
+aws_autoscaling_group.web: Still destroying... (ID: tf-asg-20181210134427450600000005, 40s elapsed)
+module.vpc.aws_nat_gateway.this.1: Still destroying... (ID: nat-082c2b876dff9f8b4, 40s elapsed)
+module.vpc.aws_nat_gateway.this.0: Still destroying... (ID: nat-08ab3408d30be578f, 40s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 50s elapsed)
+aws_autoscaling_group.web: Still destroying... (ID: tf-asg-20181210134427450600000005, 50s elapsed)
+module.vpc.aws_nat_gateway.this.0: Still destroying... (ID: nat-08ab3408d30be578f, 50s elapsed)
+module.vpc.aws_nat_gateway.this.1: Still destroying... (ID: nat-082c2b876dff9f8b4, 50s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 1m0s elapsed)
+aws_autoscaling_group.web: Still destroying... (ID: tf-asg-20181210134427450600000005, 1m0s elapsed)
+module.vpc.aws_nat_gateway.this.0: Still destroying... (ID: nat-08ab3408d30be578f, 1m0s elapsed)
+module.vpc.aws_nat_gateway.this.1: Still destroying... (ID: nat-082c2b876dff9f8b4, 1m0s elapsed)
+module.vpc.aws_nat_gateway.this[1]: Destruction complete after 1m7s
+module.vpc.aws_nat_gateway.this[0]: Destruction complete after 1m7s
+module.vpc.aws_eip.nat[1]: Destroying... (ID: eipalloc-047c62dc2e9ead145)
+module.vpc.aws_eip.nat[0]: Destroying... (ID: eipalloc-01d375ccebfb49715)
+module.vpc.aws_internet_gateway.this: Destroying... (ID: igw-0b33f45893fc89bac)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 1m10s elapsed)
+aws_autoscaling_group.web: Still destroying... (ID: tf-asg-20181210134427450600000005, 1m10s elapsed)
+module.vpc.aws_eip.nat[1]: Destruction complete after 2s
+module.vpc.aws_eip.nat[0]: Destruction complete after 2s
+module.vpc.aws_internet_gateway.this: Still destroying... (ID: igw-0b33f45893fc89bac, 10s elapsed)
+aws_autoscaling_group.web: Still destroying... (ID: tf-asg-20181210134427450600000005, 1m20s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 1m20s elapsed)
+module.vpc.aws_internet_gateway.this: Still destroying... (ID: igw-0b33f45893fc89bac, 20s elapsed)
+aws_autoscaling_group.web: Still destroying... (ID: tf-asg-20181210134427450600000005, 1m30s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 1m30s elapsed)
+module.vpc.aws_internet_gateway.this: Still destroying... (ID: igw-0b33f45893fc89bac, 30s elapsed)
+aws_autoscaling_group.web: Still destroying... (ID: tf-asg-20181210134427450600000005, 1m40s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 1m40s elapsed)
+module.vpc.aws_internet_gateway.this: Still destroying... (ID: igw-0b33f45893fc89bac, 40s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 1m50s elapsed)
+aws_autoscaling_group.web: Still destroying... (ID: tf-asg-20181210134427450600000005, 1m50s elapsed)
+aws_autoscaling_group.web: Destruction complete after 1m54s
+aws_launch_configuration.web: Destroying... (ID: sv-tf-aws-web-vm-20181210141908538000000002)
+module.elb_web.module.elb.aws_elb.this: Destroying... (ID: sv-tf-aws-elb-web)
+aws_launch_configuration.web: Destruction complete after 2s
+aws_security_group.web: Destroying... (ID: sg-0ee91330c22d6ff96)
+module.elb_web.module.elb.aws_elb.this: Destruction complete after 4s
+aws_security_group.elb_web: Destroying... (ID: sg-03459894005861edd)
+aws_security_group.web: Destruction complete after 2s
+module.vpc.aws_internet_gateway.this: Still destroying... (ID: igw-0b33f45893fc89bac, 50s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 2m0s elapsed)
+aws_security_group.elb_web: Still destroying... (ID: sg-03459894005861edd, 10s elapsed)
+module.vpc.aws_internet_gateway.this: Still destroying... (ID: igw-0b33f45893fc89bac, 1m0s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 2m10s elapsed)
+aws_security_group.elb_web: Still destroying... (ID: sg-03459894005861edd, 20s elapsed)
+module.vpc.aws_internet_gateway.this: Still destroying... (ID: igw-0b33f45893fc89bac, 1m10s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 2m20s elapsed)
+aws_security_group.elb_web: Still destroying... (ID: sg-03459894005861edd, 30s elapsed)
+module.vpc.aws_internet_gateway.this: Still destroying... (ID: igw-0b33f45893fc89bac, 1m20s elapsed)
+aws_autoscaling_group.app: Still destroying... (ID: tf-asg-20181210135035620700000007, 2m30s elapsed)
+aws_security_group.elb_web: Still destroying... (ID: sg-03459894005861edd, 40s elapsed)
+module.vpc.aws_internet_gateway.this: Still destroying... (ID: igw-0b33f45893fc89bac, 1m30s elapsed)
+aws_autoscaling_group.app: Destruction complete after 2m39s
+aws_launch_configuration.app: Destroying... (ID: sv-tf-aws-app-vm-20181210143933255200000001)
+module.elb_app.module.elb.aws_elb.this: Destroying... (ID: sv-tf-aws-elb-app)
+aws_launch_configuration.app: Destruction complete after 2s
+aws_security_group.app: Destroying... (ID: sg-08997864722d5f652)
+module.rds.module.db_instance.aws_db_instance.this: Destroying... (ID: terraformaws)
+module.elb_app.module.elb.aws_elb.this: Destruction complete after 3s
+aws_security_group.elb_app: Destroying... (ID: sg-0da82cb21bc863bc3)
+aws_security_group.app: Destruction complete after 2s
+module.vpc.aws_subnet.public[1]: Destroying... (ID: subnet-0a03e8c675086c5d3)
+module.vpc.aws_subnet.public[0]: Destroying... (ID: subnet-078f00aa40f8168f0)
+aws_security_group.elb_web: Still destroying... (ID: sg-03459894005861edd, 50s elapsed)
+module.vpc.aws_internet_gateway.this: Still destroying... (ID: igw-0b33f45893fc89bac, 1m40s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 10s elapsed)
+aws_security_group.elb_app: Still destroying... (ID: sg-0da82cb21bc863bc3, 10s elapsed)
+module.vpc.aws_subnet.public.1: Still destroying... (ID: subnet-0a03e8c675086c5d3, 10s elapsed)
+module.vpc.aws_subnet.public.0: Still destroying... (ID: subnet-078f00aa40f8168f0, 10s elapsed)
+aws_security_group.elb_web: Still destroying... (ID: sg-03459894005861edd, 1m0s elapsed)
+module.vpc.aws_internet_gateway.this: Still destroying... (ID: igw-0b33f45893fc89bac, 1m50s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 20s elapsed)
+aws_security_group.elb_app: Still destroying... (ID: sg-0da82cb21bc863bc3, 20s elapsed)
+module.vpc.aws_subnet.public.1: Still destroying... (ID: subnet-0a03e8c675086c5d3, 20s elapsed)
+module.vpc.aws_subnet.public.0: Still destroying... (ID: subnet-078f00aa40f8168f0, 20s elapsed)
+aws_security_group.elb_web: Still destroying... (ID: sg-03459894005861edd, 1m10s elapsed)
+module.vpc.aws_internet_gateway.this: Still destroying... (ID: igw-0b33f45893fc89bac, 2m0s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 30s elapsed)
+module.vpc.aws_internet_gateway.this: Destruction complete after 2m2s
+aws_security_group.elb_app: Still destroying... (ID: sg-0da82cb21bc863bc3, 30s elapsed)
+module.vpc.aws_subnet.public.1: Still destroying... (ID: subnet-0a03e8c675086c5d3, 30s elapsed)
+module.vpc.aws_subnet.public.0: Still destroying... (ID: subnet-078f00aa40f8168f0, 30s elapsed)
+aws_security_group.elb_web: Still destroying... (ID: sg-03459894005861edd, 1m20s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 40s elapsed)
+aws_security_group.elb_app: Still destroying... (ID: sg-0da82cb21bc863bc3, 40s elapsed)
+module.vpc.aws_subnet.public.1: Still destroying... (ID: subnet-0a03e8c675086c5d3, 40s elapsed)
+module.vpc.aws_subnet.public.0: Still destroying... (ID: subnet-078f00aa40f8168f0, 40s elapsed)
+module.vpc.aws_subnet.public[0]: Destruction complete after 43s
+module.vpc.aws_subnet.public[1]: Destruction complete after 43s
+aws_security_group.elb_web: Still destroying... (ID: sg-03459894005861edd, 1m30s elapsed)
+aws_security_group.elb_web: Destruction complete after 1m30s
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 50s elapsed)
+aws_security_group.elb_app: Still destroying... (ID: sg-0da82cb21bc863bc3, 50s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 1m0s elapsed)
+aws_security_group.elb_app: Still destroying... (ID: sg-0da82cb21bc863bc3, 1m0s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 1m10s elapsed)
+aws_security_group.elb_app: Destruction complete after 1m9s
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 1m20s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 1m30s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 1m40s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 1m50s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 2m0s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 2m10s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 2m20s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 2m30s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 2m40s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 2m50s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 3m0s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 3m10s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 3m20s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 3m30s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 3m40s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 3m50s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 4m0s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 4m10s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 4m20s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 4m30s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 4m40s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 4m50s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 5m0s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 5m10s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 5m20s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 5m30s elapsed)
+module.rds.db_instance.aws_db_instance.this: Still destroying... (ID: terraformaws, 5m40s elapsed)
+module.rds.module.db_instance.aws_db_instance.this: Destruction complete after 5m49s
+module.rds.module.db_option_group.aws_db_option_group.this: Destroying... (ID: terraformaws-20181210134343998900000002)
+aws_security_group.rds: Destroying... (ID: sg-055bab98d4cb3648c)
+module.rds.module.db_parameter_group.aws_db_parameter_group.this: Destroying... (ID: terraformaws-20181210134343998900000001)
+module.rds.module.db_subnet_group.aws_db_subnet_group.this: Destroying... (ID: terraformaws-20181210134405720300000003)
+module.rds.module.db_option_group.aws_db_option_group.this: Destruction complete after 1s
+module.rds.module.db_subnet_group.aws_db_subnet_group.this: Destruction complete after 1s
+module.vpc.aws_subnet.database[1]: Destroying... (ID: subnet-0b0cd36fe07134c3c)
+module.vpc.aws_subnet.database[0]: Destroying... (ID: subnet-0bc4320f82a6ff711)
+module.rds.module.db_parameter_group.aws_db_parameter_group.this: Destruction complete after 1s
+aws_security_group.rds: Destruction complete after 2s
+module.vpc.aws_subnet.private[1]: Destroying... (ID: subnet-0647885a778ae757c)
+module.vpc.aws_subnet.private[0]: Destroying... (ID: subnet-08c1629f5e1f3b2d4)
+module.vpc.aws_subnet.database[1]: Destruction complete after 2s
+module.vpc.aws_subnet.database[0]: Destruction complete after 2s
+module.vpc.aws_subnet.private[1]: Destruction complete after 2s
+module.vpc.aws_subnet.private[0]: Destruction complete after 2s
+module.vpc.aws_vpc.this: Destroying... (ID: vpc-0a35ef91a9e797716)
+module.vpc.aws_vpc.this: Destruction complete after 1s
+
+Destroy complete! Resources: 41 destroyed.
+
+c:\terraform_test>

@@ -1,0 +1,43 @@
+
+c:\terraform_test>echo "##### Ensure that SSH keys are configured to download Modules from github #####" 
+"##### Ensure that SSH keys are configured to download Modules from github #####"
+
+c:\terraform_test>echo "##### ~/.ssh/config should contain configuration for no strick hotname check #####" 
+"##### ~/.ssh/config should contain configuration for no strict hostname check #####"
+
+c:\terraform_test>C:\Users\te163408\Downloads\terraform\terraform.exe init 
+[0m[1mInitializing modules...[0m
+- module.elb_app
+- module.rds
+- module.vpc
+- module.elb_web
+- module.elb_web.elb
+- module.elb_web.elb_attachment
+- module.elb_app.elb
+- module.elb_app.elb_attachment
+- module.rds.db_subnet_group
+- module.rds.db_parameter_group
+- module.rds.db_option_group
+- module.rds.db_instance
+
+[0m[1mInitializing provider plugins...[0m
+
+The following providers do not have any version constraints in configuration,
+so the latest version was installed.
+
+To prevent automatic upgrades to new major versions that may contain breaking
+changes, it is recommended to add version = "..." constraints to the
+corresponding provider blocks in configuration, with the constraint strings
+suggested below.
+
+* provider.aws: version = "~> 1.51"
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
