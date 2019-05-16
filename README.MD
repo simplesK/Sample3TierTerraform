@@ -1,6 +1,6 @@
-# 3 Tier AWS App
+# 3 Tier AWS Architecture / WEB, WAS, DB
 
-ELB(WEB) -> NGINX -> ELB(APP) -> PHP(MySql) -> RDS
+ELB(WEB) -> Web Server(EC2:NGINX) -> ELB(WAS) -> WAS Server (EC2:Tomcat) -> RDS
 
 A Completely Automated Terraform code which needs a terraform.exe and a fresh AWS Account with a Secret and Access keys(saved either in config file or as an environment variable), for more details refer the terraform.bat (Windows) file 
 
