@@ -10,6 +10,12 @@ AWS modules are auto downloaded from github public repo and are setup , in case 
 ## Terraform variables 
 Variables can be overridden by updating terraform.tfvars file
 
+MAC)
+public_key_path = "~\.ssh\id_rsa.pub"
+
+Windows)
+public_key_path = "C:/Users/<userid>/.ssh/id_rsa.pub"
+
 ##Security : 
 Only port 80 is open for web (bebhind ELB), which can be changed to any other port (by updating the variables in terraform.tfvars)
 
@@ -23,7 +29,7 @@ App EC2 instances (PHP with connection to RDS) are behind Autoscaling groups as 
 To test connection with RDS hit the Web elb dns (printed in console at the end of terraform apply) 
 
 ##Endpoints :
- ### See PHP info :
+ ### See WEB info :
  *http://<AWS_WEB_ELB_FQDN>*
  ### See DB connection :
  *http://<AWS_WEB_ELB_FQDN>/connect.php*
